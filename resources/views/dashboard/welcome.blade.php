@@ -3,7 +3,7 @@
 @section('content')
 <main class="main users chart-page" id="skip-target">
     <div class="container">
-      <h2 class="main-title">Manning Dashboard</h2>
+      <h2 class="main-title">Esoft Management System</h2>
     <div class="row stat-cards">
     <!-- Kelaniya Card -->
 <div class="col-md-6 col-xl-3">
@@ -12,10 +12,10 @@
             <i data-feather="bar-chart-2" aria-hidden="true"></i>
         </div>
         <div class="stat-cards-info">
-            <p class="stat-cards-info__num">Kelaniya</p>
+            <p class="stat-cards-info__num">Colombo</p>
         </div>
         <div class="stat-cards-info">
-            <a href="{{ route('dashboard', ['customerId' => 'KEL001']) }}" class="cssbuttons-io-button">
+            <a href="{{ route('dashboard', ['customerId' => 'C001']) }}" class="cssbuttons-io-button">
                 EXPLORE
                 <div class="icon">
                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -35,10 +35,10 @@
             <i data-feather="bar-chart-2" aria-hidden="true"></i>
         </div>
         <div class="stat-cards-info">
-            <p class="stat-cards-info__num">Warakapola</p>
+            <p class="stat-cards-info__num">Kandy</p>
         </div>
         <div class="stat-cards-info">
-            <a href="{{ route('dashboard', ['customerId' => 'WAR001']) }}" class="cssbuttons-io-button">
+            <a href="{{ route('dashboard', ['customerId' => 'K001']) }}" class="cssbuttons-io-button">
                 EXPLORE
                 <div class="icon">
                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -59,10 +59,10 @@
                   <i data-feather="bar-chart-2" aria-hidden="true"></i>
               </div>
               <div class="stat-cards-info">
-                  <p class="stat-cards-info__num">Dambulla</p>
+                  <p class="stat-cards-info__num">Nugegoda</p>
               </div>
               <div class="stat-cards-info">
-                  <a href="{{ route('dashboard', ['customerId' => 'DAM001']) }}" class="cssbuttons-io-button">
+                  <a href="{{ route('dashboard', ['customerId' => 'N001']) }}" class="cssbuttons-io-button">
                       EXPLORE
                       <div class="icon">
                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -82,10 +82,10 @@
                   <i data-feather="bar-chart-2" aria-hidden="true"></i>
               </div>
               <div class="stat-cards-info">
-                  <p class="stat-cards-info__num">Kurunagala</p>
+                  <p class="stat-cards-info__num">Battaramulla</p>
               </div>
               <div class="stat-cards-info">
-                  <a href="{{ route('dashboard', ['customerId' => 'KUR001']) }}" class="cssbuttons-io-button">
+                  <a href="{{ route('dashboard', ['customerId' => 'B001']) }}" class="cssbuttons-io-button">
                       EXPLORE
                       <div class="icon">
                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -98,6 +98,7 @@
           </article>
       </div>
   </div>
+  
 @endsection
 
 @section('scripts')
