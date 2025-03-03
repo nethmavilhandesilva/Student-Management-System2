@@ -23,7 +23,7 @@
                     </a>
                 </li>
                 <li>
-                 <a href="{{ route('students.index', ['customerId' => request()->route('customerId')]) }}">
+                 <a href="{{ route('students.index', ['BranchId' => request()->route('BranchId')]) }}">
                  <span class="icon image" aria-hidden="true"></span>Students
                  </a>
                 </li>
@@ -75,8 +75,8 @@
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
             <picture>
-    <source srcset="{{ asset('assets/css/img/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
-    <img src="{{ asset('assets/css/img/IMG-20250116-WA0002.jpg') }}" alt="User name">
+    <source srcset="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
+    <img src="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" alt="User name">
 </picture>
 
             </span>

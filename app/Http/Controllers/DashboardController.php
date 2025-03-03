@@ -6,9 +6,9 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index($customerId)
+    public function index($BranchId)
     {
-        return view('dashboard.dashboard', compact('customerId'));
+        return view('dashboard.dashboard', compact('BranchId'));
     }
     
 }

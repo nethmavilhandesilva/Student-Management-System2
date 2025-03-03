@@ -15,7 +15,7 @@
             <p class="stat-cards-info__num">Colombo</p>
         </div>
         <div class="stat-cards-info">
-            <a href="{{ route('dashboard', ['customerId' => 'C001']) }}" class="cssbuttons-io-button">
+            <a href="{{ route('dashboard', ['BranchId' => 'C001']) }}" class="cssbuttons-io-button">
                 EXPLORE
                 <div class="icon">
                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -38,7 +38,7 @@
             <p class="stat-cards-info__num">Kandy</p>
         </div>
         <div class="stat-cards-info">
-            <a href="{{ route('dashboard', ['customerId' => 'K001']) }}" class="cssbuttons-io-button">
+            <a href="{{ route('dashboard', ['BranchId' => 'K001']) }}" class="cssbuttons-io-button">
                 EXPLORE
                 <div class="icon">
                     <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -62,7 +62,7 @@
                   <p class="stat-cards-info__num">Nugegoda</p>
               </div>
               <div class="stat-cards-info">
-                  <a href="{{ route('dashboard', ['customerId' => 'N001']) }}" class="cssbuttons-io-button">
+                  <a href="{{ route('dashboard', ['BranchId' => 'N001']) }}" class="cssbuttons-io-button">
                       EXPLORE
                       <div class="icon">
                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -85,7 +85,7 @@
                   <p class="stat-cards-info__num">Battaramulla</p>
               </div>
               <div class="stat-cards-info">
-                  <a href="{{ route('dashboard', ['customerId' => 'B001']) }}" class="cssbuttons-io-button">
+                  <a href="{{ route('dashboard', ['BranchId' => 'B001']) }}" class="cssbuttons-io-button">
                       EXPLORE
                       <div class="icon">
                           <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

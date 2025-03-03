@@ -17,10 +17,10 @@ Route::get('/home', function() {
 Route::get('/', function () {
     return view('dashboard.welcome'); 
 })->name('welcome');
-Route::get('/dashboard/{customerId}', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/dashboard/{BranchId}', [DashboardController::class, 'index'])->name('dashboard');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //students
-Route::get('/Students/{customerId}', [StudentsController::class, 'index'])->name('students.index');
+Route::get('/Students/{BranchId}', [StudentsController::class, 'index'])->name('students.index');
