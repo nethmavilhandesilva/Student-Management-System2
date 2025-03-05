@@ -10,7 +10,7 @@
 
     <title>
         @hasSection('title')
-            @yield('title')@else{{ config('app.name', 'Manning Dashboard') }}
+            @yield('title')@else{{ config('app.name', 'ELMS') }}
         @endif
     </title>
   <!-- Favicon -->

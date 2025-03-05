@@ -3,82 +3,92 @@
         <div class="sidebar-head">
             <a href="/" class="logo-wrapper" title="Home">
                 <span class="sr-only">Home</span>
-                <span class="icon logo" aria-hidden="true"></span>
+                
+                <!-- Logo Image (on the left side) -->
+                <img src="{{ asset('assets/images.png') }}" alt="Esoft Logo" style="height: 40px; margin-right: 10px;">
+                
                 <div class="logo-text">
                     <span class="logo-title">Esoft</span>
                     <span class="logo-subtitle">Dashboard</span>
                 </div>
-
             </a>
             <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
                 <span class="sr-only">Toggle menu</span>
                 <span class="icon menu-toggle" aria-hidden="true"></span>
             </button>
         </div>
+        
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
                     <a href="{{ route('welcome') }}" class="logo-wrapper" title="Home">
-                        <span class="icon home" aria-hidden="true"></span>Home
+                        <i class="bi bi-house-door" style="margin-right: 8px;"></i> Home
                     </a>
                 </li>
-                <li>
-                 <a href="{{ route('students.index', ['BranchId' => request()->route('BranchId')]) }}">
-                 <span class="icon image" aria-hidden="true"></span>Students
-                 </a>
-                </li>
-                <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon folder" aria-hidden="true"></span>Lecturers
+
+                <li> 
+                    <a href="{{ route('students.index', ['BranchId' => request()->route('BranchId')]) }}">
+                        <i class="bi bi-person-lines-fill" style="margin-right: 8px;"></i> Students
                     </a>
                 </li>
+
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon image" aria-hidden="true"></span>Branches
+                        <i class="bi bi-person-badge" style="margin-right: 8px;"></i> Lecturers
                     </a>
                 </li>
+
                 <li>
                     <a class="show-cat-btn" href="##">
-                        <span class="icon paper" aria-hidden="true"></span>Courses
+                        <i class="bi bi-diagram-3" style="margin-right: 8px;"></i> Branches
+                    </a>
+                </li>
+
+                <li>
+                    <a class="show-cat-btn" href="##">
+                        <i class="bi bi-book" style="margin-right: 8px;"></i> Courses
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
-                            <span class="icon arrow-down" aria-hidden="true"></span>
+                            <i class="bi bi-arrow-down" aria-hidden="true"></i>
                         </span>
                     </a>
                     <ul class="cat-sub-menu">
-                    <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon image" aria-hidden="true"></span>Diplomas
-                    </a>
-                </li>
-                <li>
-                    <a class="show-cat-btn" href="##">
-                        <span class="icon image" aria-hidden="true"></span>Degrees
-                    </a>
-                </li>
+                        <li>
+                            <a class="show-cat-btn" href="##">
+                                <span class="icon image" aria-hidden="true"></span>Diplomas
+                            </a>
+                        </li>
+                        <li>
+                            <a class="show-cat-btn" href="##">
+                                <span class="icon image" aria-hidden="true"></span>Degrees
+                            </a>
+                        </li>
                     </ul>
-               
-            <span class="system-menu__title">system</span>
-            <ul class="sidebar-body-menu">
-                <li>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                    <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-link">
-                        <span class="icon edit" aria-hidden="true"></span>Logout
-                    </a>
                 </li>
+
+                <span class="system-menu__title">System</span>
+
+                <ul class="sidebar-body-menu">
+                    <li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                        <a href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="btn btn-link">
+                            <i class="bi bi-box-arrow-right" style="margin-right: 8px;"></i> Logout
+                        </a>
+                    </li>
+                </ul>
             </ul>
         </div>
     </div>
+
     <div class="sidebar-footer">
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
-            <picture>
-    <source srcset="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
-    <img src="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" alt="User name">
-</picture>
-
+                <picture>
+                    <source srcset="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
+                    <img src="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" alt="User name">
+                </picture>
             </span>
             <div class="sidebar-user-info">
                 <span class="sidebar-user__title">Nethma Vilhan De Silva</span>
