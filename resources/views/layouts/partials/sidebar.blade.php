@@ -33,13 +33,13 @@
                 </li>
 
                 <li>
-                    <a class="show-cat-btn" href="##">
+                        <a href="{{ route('teachers.index', ['BranchId' => request()->route('BranchId')]) }}">
                         <i class="bi bi-person-badge" style="margin-right: 8px;"></i> Lecturers
                     </a>
                 </li>
 
                 <li>
-                    <a class="show-cat-btn" href="##">
+                <a href="{{ route('branches.index', ['BranchId' => request()->route('BranchId')]) }}">
                         <i class="bi bi-diagram-3" style="margin-right: 8px;"></i> Branches
                     </a>
                 </li>
@@ -65,6 +65,32 @@
                         </li>
                     </ul>
                 </li>
+                <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const showCatBtns = document.querySelectorAll(".show-cat-btn");
+
+        showCatBtns.forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+                e.preventDefault(); // Prevent the default anchor action
+                const subMenu = this.nextElementSibling;
+
+                if (subMenu && subMenu.classList.contains("cat-sub-menu")) {
+                    subMenu.classList.toggle("active");
+                }
+            });
+        });
+    });
+</script>
+<style>.cat-sub-menu {
+    display: none;
+    list-style: none;
+    padding: 0;
+}
+
+.cat-sub-menu.active {
+    display: block;
+}
+</style>
 
                 <span class="system-menu__title">System</span>
 

@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StudentsController;
-use App\Http\Controllers\ChatController;
+use App\Http\Controllers\TeachersController;
+use App\Http\Controllers\BranchersController;
+
 
 Route::get('/', function () {
     return view('auth.login');
@@ -25,6 +27,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 //students
 Route::get('/Students/{BranchId}', [StudentsController::class, 'index'])->name('students.index');
-//chat controller
-Route::get('/chat/{BranchId}', [ChatController::class, 'index']);
-Route::post('/send-message', [ChatController::class, 'sendMessage']);
+//Teacher
+Route::get('/Teachers/{BranchId}', [TeachersController::class, 'index'])->name('teachers.index');
+//Branches
+Route::get('/Branches/{BranchId}', [BranchersController::class, 'index'])->name('branches.index');
