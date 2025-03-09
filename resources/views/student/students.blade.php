@@ -14,8 +14,7 @@
             <th>Age</th>
             <th>NIC Number</th>
             <th>Branch ID</th>
-            <th>Created At</th>
-            <th>Updated At</th>
+            <th>Actions</th>
         </tr>
         @foreach ($studentData as $student)
             <tr>
@@ -25,11 +24,12 @@
                 <td>{{ $student->Age }}</td>
                 <td>{{ $student->NIC_Number }}</td>
                 <td>{{ $student->BranchId }}</td>
-                <td>{{ $student->created_at }}</td>
-                <td>{{ $student->updated_at }}</td>
+                <td>
+                    <a href="{{ route('students.create', ['BranchId' => $student->BranchId]) }}" class="btn btn-success">Add</a>
+                 
+                </td>
             </tr>
         @endforeach
     </table>
 </body>
-</html>
 @endsection
