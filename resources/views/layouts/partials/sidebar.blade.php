@@ -45,52 +45,10 @@
                 </li>
 
                 <li>
-                    <a class="show-cat-btn" href="##">
-                        <i class="bi bi-book" style="margin-right: 8px;"></i> Courses
-                        <span class="category__btn transparent-btn" title="Open list">
-                            <span class="sr-only">Open list</span>
-                            <i class="bi bi-arrow-down" aria-hidden="true"></i>
-                        </span>
+                <a href="{{ route('courses.index', ['BranchId' => request()->route('BranchId')]) }}">
+                        <i class="bi bi-diagram-3" style="margin-right: 8px;"></i> Courses
                     </a>
-                    <ul class="cat-sub-menu">
-                        <li>
-                            <a class="show-cat-btn" href="##">
-                                <span class="icon image" aria-hidden="true"></span>Diplomas
-                            </a>
-                        </li>
-                        <li>
-                            <a class="show-cat-btn" href="##">
-                                <span class="icon image" aria-hidden="true"></span>Degrees
-                            </a>
-                        </li>
-                    </ul>
                 </li>
-                <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const showCatBtns = document.querySelectorAll(".show-cat-btn");
-
-        showCatBtns.forEach((btn) => {
-            btn.addEventListener("click", function (e) {
-                e.preventDefault(); // Prevent the default anchor action
-                const subMenu = this.nextElementSibling;
-
-                if (subMenu && subMenu.classList.contains("cat-sub-menu")) {
-                    subMenu.classList.toggle("active");
-                }
-            });
-        });
-    });
-</script>
-<style>.cat-sub-menu {
-    display: none;
-    list-style: none;
-    padding: 0;
-}
-
-.cat-sub-menu.active {
-    display: block;
-}
-</style>
 
                 <span class="system-menu__title">System</span>
 
@@ -112,8 +70,8 @@
         <a href="##" class="sidebar-user">
             <span class="sidebar-user-img">
                 <picture>
-                    <source srcset="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
-                    <img src="{{ asset('assets/css/IMG-20250116-WA0002.jpg') }}" alt="User name">
+                    <source srcset="{{ asset('assets/IMG-20250116-WA0002.jpg') }}" type="image/jpeg">
+                    <img src="{{ asset('assets/IMG-20250116-WA0002.jpg') }}" alt="User name">
                 </picture>
             </span>
             <div class="sidebar-user-info">

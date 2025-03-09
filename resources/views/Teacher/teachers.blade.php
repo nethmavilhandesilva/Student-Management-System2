@@ -14,8 +14,6 @@
             <th>Phone_Number</th>
             <th>Salary</th>
             <th>Branch ID</th>
-            <th>Created At</th>
-            <th>Updated At</th>
         </tr>
         @foreach ( $lectureData as $lecture)
             <tr>
@@ -25,8 +23,10 @@
                 <td>{{ $lecture->Phone_Number }}</td>
                 <td>{{ $lecture->Salary }}</td>
                 <td>{{ $lecture->BranchId }}</td>
-                <td>{{ $lecture->created_at }}</td>
-                <td>{{ $lecture->updated_at }}</td>
+                <td>
+                    <a href="{{ route('teachers.create', ['BranchId' => $lecture->BranchId]) }}" class="btn btn-success">Add</a>
+                 
+                </td>
             </tr>
         @endforeach
     </table>
