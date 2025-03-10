@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
     <h1>Branch Data (Branch ID: {{ $BranchId }})</h1>
-    <a href="{{ route('branches.create', ['BranchId' => $BranchId]) }}" class="btn btn-primary mb-3">Add New Branch</a>
+  
     <table class="table">
         <tr>
             <th>ID</th>
@@ -21,6 +21,13 @@
                 <td>{{ $branch->Location }}</td>
                 <td>{{ $branch->created_at }}</td>
                 <td>{{ $branch->updated_at }}</td>
+                <td>  <a href="{{ route('branches.create', ['BranchId' => $BranchId]) }}" class="btn btn-primary mb-3">Add New Branch</a>
+                <form action="{{ route('branches.destroy', ['id' => $branch->id, 'BranchId' => $branch->BranchID]) }}" method="POST" style="display:inline;">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
             </tr>
         @endforeach
     </table>

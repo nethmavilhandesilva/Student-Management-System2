@@ -32,5 +32,20 @@ class BranchersController extends Controller
         return redirect()->route('branches.index', ['BranchId' => $request->BranchID])
                          ->with('success', 'Branch added successfully!');
     }
+    public function destroy($id, $BranchId)
+{
+    // Find the student by ID
+    $Branch = branch::find($id);
+
+    // If the student exists, delete it
+    if ($Branch) {
+        $Branch->delete();
+        return redirect()->route('branches.index', ['BranchId' => $BranchId])
+                         ->with('success', 'Branch record deleted successfully!');
+    }
+
+    return redirect()->route('branches.index', ['BranchId' => $BranchId])
+                     ->with('error', 'Branch not found!');
+}
 }
 
