@@ -32,4 +32,19 @@ class TeachersController extends Controller
 
     return redirect()->route('teachers.index', ['BranchId' => $request->BranchId]);
 }
+public function destroy($id, $BranchId)
+{
+    // Find the student by ID
+    $teacher = lecture::find($id);
+
+    // If the student exists, delete it
+    if ($teacher) {
+        $teacher->delete();
+        return redirect()->route('teachers.index', ['BranchId' => $BranchId])
+                         ->with('success', 'Teacher record deleted successfully!');
+    }
+
+    return redirect()->route('teachers.index', ['BranchId' => $BranchId])
+                     ->with('error', 'Teacher not found!');
+}
 }

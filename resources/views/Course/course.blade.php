@@ -10,7 +10,7 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Course_Name</th>
+            <th>Course_ID</th>
             <th>Duration</th>
             <th>Branch ID</th>
         </tr>
@@ -23,7 +23,11 @@
                 <td>{{ $course->BranchId }}</td>
                 <td>
                     <a href="{{ route('courses.create', ['BranchId' => $course->BranchId]) }}" class="btn btn-success">Add</a>
-                 
+                    <form action="{{ route('courses.destroy', ['id' =>  $course->id, 'BranchId' =>  $course->BranchId]) }}" method="POST" style="display:inline;">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
                 </td>
             </tr>
         @endforeach

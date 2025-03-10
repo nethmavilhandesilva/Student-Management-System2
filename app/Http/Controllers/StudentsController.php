@@ -31,4 +31,19 @@ class StudentsController extends Controller
 
     return redirect()->route('students.index', ['BranchId' => $request->BranchId]);
 }
+public function destroy($id, $BranchId)
+{
+    // Find the student by ID
+    $student = Student::find($id);
+
+    // If the student exists, delete it
+    if ($student) {
+        $student->delete();
+        return redirect()->route('students.index', ['BranchId' => $BranchId])
+                         ->with('success', 'Student record deleted successfully!');
+    }
+
+    return redirect()->route('students.index', ['BranchId' => $BranchId])
+                     ->with('error', 'Student not found!');
+}
 }

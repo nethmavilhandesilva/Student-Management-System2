@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class course extends Model
 {
     protected $table = 'courses'; // Your table name
-    protected $fillable =['Name','	Course_ID','Duration','BranchId'];
+    protected $fillable =['Name','Course_ID','Duration','BranchId'];
 }

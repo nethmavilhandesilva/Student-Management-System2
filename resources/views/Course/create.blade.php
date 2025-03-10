@@ -21,8 +21,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="Course_Module" class="form-label">Course Module</label>
-                        <input type="text" name="Course_Module" class="form-control" required>
+                    <label for="Course_ID" class="form-label">Course ID</label>
+                    <input type="text" name="Course_ID" class="form-control" required>
                     </div>
 
                     <div class="mb-3">

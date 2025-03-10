@@ -25,7 +25,12 @@
                 <td>{{ $lecture->BranchId }}</td>
                 <td>
                     <a href="{{ route('teachers.create', ['BranchId' => $lecture->BranchId]) }}" class="btn btn-success">Add</a>
-                 
+                    <form action="{{ route('teachers.destroy', ['id' => $lecture->id, 'BranchId' => $lecture->BranchId]) }}" method="POST" style="display:inline;">
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+
                 </td>
             </tr>
         @endforeach

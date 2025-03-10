@@ -20,15 +20,30 @@ class CourseController extends Controller
        return view('Course.create', compact('BranchId'));
     }
     public function store(Request $request)
- {
-     // Create the student record
-     course::create([
-         'Name' => $request->Name,
-         'Course_ID' => $request->Course_ID ?? Str::uuid(),
-         'Duration' => $request->Duration
-         
-     ]);
- 
-     return redirect()->route('courses.index', ['BranchId' => $request->BranchId]);
- }
+{
+    Course::create([
+        'Course_ID' => $request->Course_ID,
+        'Name' => $request->Name,
+        'Duration' => $request->Duration,
+        'BranchId' => $request->BranchId,
+    ]);
+
+    return redirect()->route('courses.index', ['BranchId' => $request->BranchId])
+                     ->with('success', 'Course added successfully!');
+}
+public function destroy($id, $BranchId)
+{
+    // Find the student by ID
+    $Course = course::find($id);
+
+    // If the student exists, delete it
+    if ($Course) {
+        $Course->delete();
+        return redirect()->route('courses.index', ['BranchId' => $BranchId])
+                         ->with('success', 'Course record deleted successfully!');
+    }
+
+    return redirect()->route('courses.index', ['BranchId' => $BranchId])
+                     ->with('error', 'Courses not found!');
+}
 }
