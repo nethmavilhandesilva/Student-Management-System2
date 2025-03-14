@@ -26,6 +26,7 @@
                 <td>{{ $student->BranchId }}</td>
                 <td>
                     <a href="{{ route('students.create', ['BranchId' => $student->BranchId]) }}" class="btn btn-success">Add</a>
+                    <a href="{{ route('students.edit', ['id' => $student->id, 'BranchId' => $student->BranchId]) }}" class="btn btn-primary">Update</a>
                     <form action="{{ route('students.destroy', ['id' => $student->id, 'BranchId' => $student->BranchId]) }}" method="POST" style="display:inline;">
     @csrf
     @method('DELETE')
