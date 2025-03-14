@@ -22,6 +22,7 @@
                 <td>{{ $branch->created_at }}</td>
                 <td>{{ $branch->updated_at }}</td>
                 <td>  <a href="{{ route('branches.create', ['BranchId' => $BranchId]) }}" class="btn btn-primary mb-3">Add New Branch</a>
+                <a href="{{ route('branches.edit', ['id' => $branch->id, 'BranchId' => $branch->BranchId]) }}" class="btn btn-primary">Update</a>
                 <form action="{{ route('branches.destroy', ['id' => $branch->id, 'BranchId' => $branch->BranchID]) }}" method="POST" style="display:inline;">
     @csrf
     @method('DELETE')

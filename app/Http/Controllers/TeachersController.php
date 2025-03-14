@@ -47,4 +47,21 @@ public function destroy($id, $BranchId)
     return redirect()->route('teachers.index', ['BranchId' => $BranchId])
                      ->with('error', 'Teacher not found!');
 }
+public function edit($id, $BranchId)  
+{
+    $lecture = lecture::findOrFail($id);
+    return view('Teacher.edit', compact('lecture', 'BranchId')); 
+}
+
+public function update(Request $request, $id, $BranchId)  // Add BranchId parameter here
+{
+    $lecture = lecture::findOrFail($id);
+    // Update student details
+    $lecture->update($request->all());
+
+    // Redirect to the students index page with the BranchId
+    return redirect()->route('teachers.index', ['BranchId' => $BranchId])
+                     ->with('success', 'Student details updated successfully!');
+}
+
 }
