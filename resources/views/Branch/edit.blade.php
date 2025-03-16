@@ -3,7 +3,7 @@
 @section('content')
 <h1>Edit Branches Details</h1>
 
-<form action="{{ route('branchers.update', ['id' => $branch->id, 'BranchId' => $branch->BranchId]) }}" method="POST">
+<form action="{{ route('branches.update', ['id' => $branch->id, 'BranchId' => $branch->BranchId]) }}" method="POST">
 
 
     @csrf

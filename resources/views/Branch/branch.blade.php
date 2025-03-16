@@ -26,7 +26,7 @@
                 <form action="{{ route('branches.destroy', ['id' => $branch->id, 'BranchId' => $branch->BranchID]) }}" method="POST" style="display:inline;">
     @csrf
     @method('DELETE')
-    <button type="submit" class="btn btn-danger">Delete</button>
+    <button type="submit" class="btn btn-danger">Delete</button>z
 </form>
 
             </tr>
