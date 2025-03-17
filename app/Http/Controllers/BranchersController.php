@@ -47,34 +47,6 @@ class BranchersController extends Controller
     return redirect()->route('branches.index', ['BranchId' => $BranchId])
                      ->with('error', 'Branch not found!');
 }
-public function edit($id, $BranchId)  
-{
-    // Fetch the branch by ID
-    $branch = Branch::findOrFail($id);
-    
-    // Return the edit view with branch and BranchId
-    return view('Branch.edit', compact('branch', 'BranchId')); 
-}
-
-public function update(Request $request, $id, $BranchId)  
-{
-    // Fetch the branch by ID
-    $branch = Branch::findOrFail($id);
-    
-    // Validate the incoming request (optional but recommended)
-    $request->validate([
-        'Name' => 'required|string|max:255',
-        'Location' => 'required|string|max:255',
-        // Add other validation rules as needed
-    ]);
-
-    // Update branch details
-    $branch->update($request->all());
-
-    // Redirect to the branches index page with the BranchId
-    return redirect()->route('branches.index', ['BranchId' => $BranchId])
-                     ->with('success', 'Branch details updated successfully!');
-}
 
 }
 
