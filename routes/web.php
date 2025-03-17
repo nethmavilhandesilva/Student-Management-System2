@@ -46,9 +46,6 @@ Route::get('/Branches/{BranchId}', [BranchersController::class, 'index'])->name(
 Route::get('/Branches/create/{BranchId}', [BranchersController::class, 'create'])->name('branches.create');
 Route::post('/Branches', [BranchersController::class, 'store'])->name('branches.store');
 Route::delete('/Branches/{id}/{BranchId}', [BranchersController::class, 'destroy'])->name('branches.destroy');
-Route::get('/Branches/{id}/edit/{BranchId}', [BranchersController::class, 'edit'])->name('branches.edit');
-Route::put('/Branches/{id}/{BranchId}', [BranchersController::class, 'update'])->name('branches.update');  // Add BranchId here
-
 //Courses
 Route::get('/Courses/{BranchId}', [CourseController::class, 'index'])->name('courses.index');
 Route::get('/Courses/create/{BranchId}', [CourseController::class, 'create'])->name('courses.create');
