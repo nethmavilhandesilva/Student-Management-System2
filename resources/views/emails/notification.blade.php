@@ -15,6 +15,6 @@
     </ul>
 
     <p>Thank you,</p>
-    <p>Your App Team</p>
+    <p>Esoft</p>
 </body>
 </html>

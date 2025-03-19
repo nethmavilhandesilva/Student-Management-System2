@@ -28,14 +28,17 @@ class Student extends Model
         });
     }
 
-    private static function sendEmailNotification($subject, $message, $data)
-    {
-        $details = [
-            'subject' => $subject,
-            'message' => $message,
-            'data' => $data
-        ];
+    protected static function sendEmailNotification($subject, $message, $student)
+{
+    $details = [
+        'subject' => $subject,
+        'message' => $message,
+        'data' => $student
+    ];
 
-        Mail::to('nethmavilhan@gmail.com')->send(new RecordChangeNotification($details));
-    }
+    Mail::send('emails.notification', ['details' => $details], function ($mail) use ($subject) {
+        $mail->to('nethmavilhan@gmail.com')
+             ->subject($subject);
+    });
+}
 }
