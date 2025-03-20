@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\student;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Facades\Storage;
 
 class StudentsController extends Controller
 {
@@ -21,7 +23,7 @@ class StudentsController extends Controller
    public function store(Request $request)
 {
     // Create the student record
-    student::create([
+    $student = student::create([
         'Name' => $request->Name,
         'Course_Name' => $request->Course_Name,
         'Age' => $request->Age,
@@ -29,6 +31,13 @@ class StudentsController extends Controller
         'BranchId' => $request->BranchId,
     ]);
 
+    // Generate the QR Code for the newly created student
+    $qrCode = QrCode::format('png')->size(200)->generate(route('students.show', ['id' => $student->id]));
+
+    // Store QR Code in the public directory
+    Storage::disk('public')->put("qrcodes/student_{$student->id}.png", $qrCode);
+
+    // Redirect back to the students index
     return redirect()->route('students.index', ['BranchId' => $request->BranchId]);
 }
 public function destroy($id, $BranchId)
