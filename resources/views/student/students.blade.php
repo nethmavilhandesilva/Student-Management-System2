@@ -27,10 +27,13 @@
                 <td>
                     <a href="{{ route('students.create', ['BranchId' => $student->BranchId]) }}" class="btn btn-success">Add</a>
                     <a href="{{ route('students.edit', ['id' => $student->id, 'BranchId' => $student->BranchId]) }}" class="btn btn-primary">Update</a>
+                    <a href="{{ route('students.scan', ['BranchId' => $student->BranchId]) }}" class="btn btn-primary">Scan QR Code</a>
+
                     <form action="{{ route('students.destroy', ['id' => $student->id, 'BranchId' => $student->BranchId]) }}" method="POST" style="display:inline;">
     @csrf
     @method('DELETE')
     <button type="submit" class="btn btn-danger">Delete</button>
+    
 </form>
 
                  

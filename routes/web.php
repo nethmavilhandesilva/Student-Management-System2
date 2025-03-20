@@ -51,3 +51,7 @@ Route::get('/Courses/{BranchId}', [CourseController::class, 'index'])->name('cou
 Route::get('/Courses/create/{BranchId}', [CourseController::class, 'create'])->name('courses.create');
 Route::post('/Courses', [CourseController::class, 'store'])->name('courses.store');
 Route::delete('/Courses/{id}/{BranchId}', [CourseController::class, 'destroy'])->name('courses.destroy');
+//scan
+Route::get('/students/scan/{BranchId}', function ($BranchId) {
+    return view('student.scan', compact('BranchId'));
+})->name('students.scan');
